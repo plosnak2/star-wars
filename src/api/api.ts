@@ -7,3 +7,10 @@ export const getFilms = async () => {
     const data = await response.data;
     return data;
 }
+
+// api for fetching character
+export const getCharacter = async (url: string) => {
+    const response = await axios.get(url)
+    const data = await response.data;
+    return data;
+}

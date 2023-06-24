@@ -32,6 +32,12 @@ a:hover {
   color:  #fddf2b;
 }
 
+.spinner-characters {
+  margin: auto;
+  display: block;
+  color:  black;
+}
+
 .movie {
   background-color: #fddf2b;
   margin-top: 50px;
@@ -46,6 +52,24 @@ a:hover {
 .movie-info {
   margin-left: 10px;
 }
+
+.characters {
+  margin-top: 20px;
+}
+
+.accordion-item {
+  --bs-accordion-border-color: none
+}
+
+.header button {
+  background-color:  #c4a912 !important;
+}
+
+.accordion-body {
+  background-color: #c4a912;
+}
+
+
 
 @media screen and (max-width: 1000px) {
   .movie-img-info {
