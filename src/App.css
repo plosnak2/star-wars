@@ -20,3 +20,29 @@ a:hover {
   color: inherit;
   opacity: 70%;
 }
+
+.main-layout-movies {
+  margin-bottom: 50px;
+}
+
+.spinner {
+  margin: auto;
+  display: block;
+  margin-top: 50px;
+  color:  #fddf2b;
+}
+
+.movie {
+  background-color: #fddf2b;
+  margin-top: 50px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.movie-img-info {
+  display: flex;
+}
+
+.movie-info {
+  margin-left: 10px;
+}
