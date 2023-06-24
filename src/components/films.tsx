@@ -34,12 +34,12 @@ export const Movies: FC<IProps> = ({films}) => {
         <>
             <div className="filter">
                 <div className={`filter-half ${sortByRelease ? 'active' : ''}`} onClick={sortByReleaseDate}>
-                    Sort by release date
+                    Sort by release date <br />
                     <AiOutlineCalendar size={40}/>
                 </div>
                 <div className="verticalLine"></div>
                 <div className={`filter-half ${sortByRelease ? '' : 'active'}`} onClick={sortByEpisodeId}>
-                    Sort by episode id
+                    Sort by episode id <br />
                     <PiSortAscendingBold size={40}/>
                 </div>
             </div>

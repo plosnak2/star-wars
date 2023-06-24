@@ -78,7 +78,7 @@ a:hover {
 }
 
 .filter-half {
-  flex: 50%;
+  width: 50%;
   padding: 20px 100px 20px 100px;
   text-align: center;
 }
@@ -99,6 +99,12 @@ a:hover {
   background-color: #c4a912;
 }
 
+@media screen and (max-width: 1200px) {
+  .filter {
+    width: 80%;
+  }
+}
+
 
 @media screen and (max-width: 1000px) {
   .movie-img-info {
@@ -112,5 +118,17 @@ a:hover {
   .movie-info {
     margin-left: 0px;
     margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .filter {
+    width: 100%;
+  }
+
+  .filter-half {
+    padding: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
