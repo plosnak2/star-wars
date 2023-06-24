@@ -1,17 +1,20 @@
-import { IFilm } from "../types/types"
+import { IMovie } from "../types/types"
 import { FC, useState } from "react";
 import { Movie } from "./movie";
 import { AiOutlineCalendar } from 'react-icons/ai';
 import { PiSortAscendingBold } from 'react-icons/pi';
 
 interface IProps {
-    films: IFilm[]
+    films: IMovie[]
 }
 
-export const Films: FC<IProps> = ({films}) => {
-    const [movies, setMovies] = useState<IFilm[]>(films)
+export const Movies: FC<IProps> = ({films}) => {
+    // holding state for movies (for sorting)
+    const [movies, setMovies] = useState<IMovie[]>(films)
+    // state that handles sorting information
     const [sortByRelease, setSortByRelease] = useState<boolean>(true)
     
+    // function for sorting by release date
     const sortByReleaseDate = () => {
         let arr = [...movies]
         arr.sort((a, b) => (a.release_date > b.release_date) ? 1 : -1)
@@ -19,6 +22,7 @@ export const Films: FC<IProps> = ({films}) => {
         setSortByRelease(true)
     }
 
+    // function for sorting by chronological order
     const sortByEpisodeId = () => {
         let arr = [...movies]
         arr.sort((a, b) => (a.episode_id > b.episode_id) ? 1 : -1)

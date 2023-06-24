@@ -5,14 +5,16 @@ import {
 } from '@tanstack/react-query'
 import { getFilms } from "../api/api";
 import Spinner from 'react-bootstrap/Spinner';
-import { Films } from "../components/films";
+import { Movies } from "../components/films";
 
 export const MainPage: FC = ({}) => {
+    // fetching information about movies
     const getFilmsQuery = useQuery({
         queryKey: ['films'],
         queryFn: getFilms
     })
 
+    // if data are still being fetched (loading state) then spinner is displayed
     if( getFilmsQuery.isLoading ){
         return ( 
             <div>
@@ -22,11 +24,12 @@ export const MainPage: FC = ({}) => {
         )
     }
 
+    // otherwise components that display movies is displayed
     return(
         <div>
             <CustomNavbar />
             <div className="container main-layout-movies">
-                <Films films={getFilmsQuery.data.results}/>
+                <Movies films={getFilmsQuery.data.results}/>
             </div>
         </div>
     )
