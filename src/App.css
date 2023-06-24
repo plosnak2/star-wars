@@ -46,3 +46,18 @@ a:hover {
 .movie-info {
   margin-left: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+  .movie-img-info {
+    display: block;
+  }
+
+  .movie-img {
+    text-align: center;
+  }
+
+  .movie-info {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}
