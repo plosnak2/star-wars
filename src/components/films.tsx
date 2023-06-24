@@ -1,7 +1,8 @@
 import { IFilm } from "../types/types"
 import { FC, useState } from "react";
-import Accordion from 'react-bootstrap/Accordion';
 import { Movie } from "./movie";
+import { AiOutlineCalendar } from 'react-icons/ai';
+import { PiSortAscendingBold } from 'react-icons/pi';
 
 interface IProps {
     films: IFilm[]
@@ -30,10 +31,12 @@ export const Films: FC<IProps> = ({films}) => {
             <div className="filter">
                 <div className={`filter-half ${sortByRelease ? 'active' : ''}`} onClick={sortByReleaseDate}>
                     Sort by release date
+                    <AiOutlineCalendar size={40}/>
                 </div>
                 <div className="verticalLine"></div>
                 <div className={`filter-half ${sortByRelease ? '' : 'active'}`} onClick={sortByEpisodeId}>
-                    Sort by episode ID
+                    Sort by episode id
+                    <PiSortAscendingBold size={40}/>
                 </div>
             </div>
             {
