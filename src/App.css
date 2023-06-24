@@ -69,6 +69,35 @@ a:hover {
   background-color: #c4a912;
 }
 
+.filter {
+  background-color: #fddf2b;
+  display: flex;
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.filter-half {
+  flex: 50%;
+  padding: 20px 100px 20px 100px;
+  text-align: center;
+}
+
+.filter-half:hover {
+  opacity: 70%;
+  cursor: pointer;
+}
+
+.verticalLine {
+  border-left: 2px solid black;
+  align-self: stretch;
+  width: 1px;
+  display: block;
+}
+
+.active {
+  background-color: #c4a912;
+}
 
 
 @media screen and (max-width: 1000px) {

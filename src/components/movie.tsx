@@ -6,6 +6,7 @@ import {
 } from '@tanstack/react-query'
 import { getCharacter } from "../api/api";
 import Spinner from 'react-bootstrap/Spinner';
+import { UseQueryResult } from "@tanstack/react-query";
 
 interface IProps {
     movie: IFilm;
@@ -22,14 +23,15 @@ export const Movie: FC<IProps> = ({movie,index}) => {
         }),
     })
     
-    const charLoading = (character:any) => character.isLoading;
+    // TODO character type
+    const charLoading = (character: UseQueryResult<any, unknown>) => character.isLoading;
 
     if(characterQueries.some(charLoading)) {
         return (
-            <div className="movie">
+            <div className="movie" key={index}>
             <div className="movie-img-info">
                 <div className="movie-img">
-                    <img src="https://placehold.co/350x200" width={350} height={200}/>
+                    <img src="https://placehold.co/350x200" width={350} height={200} alt="Movie Placeholder"/>
                 </div>
                 <div className="movie-info">
                     <h3>{movie.title} - {movie.release_date.toString()}</h3>
@@ -51,7 +53,7 @@ export const Movie: FC<IProps> = ({movie,index}) => {
     }
 
     return(
-        <div className="movie">
+        <div className="movie" key={index}>
             <div className="movie-img-info">
                 <div className="movie-img">
                     <img src="https://placehold.co/350x200" width={350} height={200}/>
@@ -67,8 +69,8 @@ export const Movie: FC<IProps> = ({movie,index}) => {
                         <Accordion.Header className="header">Characters</Accordion.Header>
                         <Accordion.Body className="accordion-body">
                             {
-                                characterQueries.map(character =>(
-                                    <div>
+                                characterQueries.map((character, charIndex) =>(
+                                    <div key={charIndex}>
                                         {character?.data?.name}
                                     </div>
                                 ))
