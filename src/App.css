@@ -75,6 +75,7 @@ a:hover {
   width: 50%;
   margin: auto;
   margin-top: 50px;
+  border-radius: 10px;
 }
 
 .filter-half {
@@ -86,6 +87,14 @@ a:hover {
 .filter-half:hover {
   opacity: 70%;
   cursor: pointer;
+}
+
+.filter-half:first-child {
+  border-radius: 10px 0px 0px 10px;
+}
+
+.filter-half:last-child {
+  border-radius: 0px 10px 10px 0px;
 }
 
 .verticalLine {
