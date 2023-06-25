@@ -1,5 +1,4 @@
 import { FC } from "react";
-import CustomNavbar from "../components/navbar";
 import {
     useQuery,
 } from '@tanstack/react-query'
@@ -25,10 +24,8 @@ export const MainPage: FC = ({}) => {
 
     // otherwise components that display movies is displayed
     return(
-        <div>
-            <div className="container main-layout-movies">
-                <Movies films={getFilmsQuery.data.results}/>
-            </div>
+        <div className="container main-layout-movies">
+            <Movies films={getFilmsQuery.data.results}/>
         </div>
     )
 }

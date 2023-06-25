@@ -113,6 +113,10 @@ a:hover {
   opacity: 75%;
 }
 
+.character-link {
+  display: table;
+}
+
 
 @media screen and (max-width: 1200px) {
   .filter {
