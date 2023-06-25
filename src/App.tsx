@@ -6,6 +6,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { CharacterPage } from "./pages/character";
 
 const queryClient = new QueryClient()
 
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route path="/" element={<MainPage />} />
+            <Route path="character/:id" element={<CharacterPage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

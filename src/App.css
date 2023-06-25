@@ -108,6 +108,12 @@ a:hover {
   background-color: #c4a912;
 }
 
+.character-link:hover {
+  cursor: pointer;
+  opacity: 75%;
+}
+
+
 @media screen and (max-width: 1200px) {
   .filter {
     width: 80%;

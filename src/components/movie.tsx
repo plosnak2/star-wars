@@ -1,4 +1,4 @@
-import { IMovie } from "../types/types"
+import { IMovie, ICharacter } from "../types/types"
 import { FC } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import {
@@ -7,6 +7,7 @@ import {
 import { getCharacter } from "../api/api";
 import Spinner from 'react-bootstrap/Spinner';
 import { UseQueryResult } from "@tanstack/react-query";
+import { useNavigate } from 'react-router-dom';
 
 interface IProps {
     movie: IMovie;
@@ -14,6 +15,7 @@ interface IProps {
 }
 
 export const Movie: FC<IProps> = ({movie,index}) => {
+    const navigate = useNavigate();
     // queries that fetches information about every single character in given movie
     const characterQueries = useQueries({
         queries: movie.characters.map((character) => {
@@ -46,9 +48,9 @@ export const Movie: FC<IProps> = ({movie,index}) => {
                             {
                                 characterQueries.some(charLoading) ? 
                                 <Spinner className="spinner-characters" animation="border" />
-                                : characterQueries.map((character, charIndex) =>(
-                                    <div key={charIndex}>
-                                        {character?.data?.name}
+                                : characterQueries.map((character: UseQueryResult<any, unknown>, charIndex: number) =>(
+                                    <div className="character-link" key={charIndex} onClick={() => navigate('character/' + character.data.url.split('/')[character.data.url.split('/').length - 2])}>
+                                        {character.data.name}
                                     </div>
                                 ))
                             }
