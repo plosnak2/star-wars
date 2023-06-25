@@ -18,7 +18,6 @@ export const MainPage: FC = ({}) => {
     if( getFilmsQuery.isLoading ){
         return ( 
             <div>
-                <CustomNavbar />
                 <Spinner className="spinner" animation="border" />
             </div>
         )
@@ -27,7 +26,6 @@ export const MainPage: FC = ({}) => {
     // otherwise components that display movies is displayed
     return(
         <div>
-            <CustomNavbar />
             <div className="container main-layout-movies">
                 <Movies films={getFilmsQuery.data.results}/>
             </div>

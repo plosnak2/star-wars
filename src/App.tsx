@@ -7,6 +7,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import { CharacterPage } from "./pages/character";
+import CustomNavbar from "./components/navbar";
 
 const queryClient = new QueryClient()
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+      <CustomNavbar />
         <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="character/:id" element={<CharacterPage />} />

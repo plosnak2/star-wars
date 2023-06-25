@@ -13,13 +13,13 @@ function CustomNavbar() {
               src={require('../images/star-wars.png')}
               width="120"
               className="d-inline-block align-top"
-              alt="Alveno"
+              alt="Star Wars"
             />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link> <Link to="/"> <a> Films </a></Link></Nav.Link>
+            <Nav.Link> <Link to="/">  Movies </Link></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

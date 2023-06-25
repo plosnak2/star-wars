@@ -5,7 +5,6 @@ export const CharacterPage: FC = ({}) => {
 
     return(
         <div>
-            <CustomNavbar />
             <div className="container main-layout-movies">
                 character info
             </div>
