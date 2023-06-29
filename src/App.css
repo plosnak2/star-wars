@@ -155,6 +155,52 @@ a:hover {
   margin-left: 20px;
 }
 
+.character-movies {
+  margin-bottom: 50px;
+}
+
+.single-character-movie:nth-child(0){
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 1.5;
+  animation-duration: 1.5s;
+}
+
+.single-character-movie:nth-child(1){
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 2s;
+  animation-duration: 1.5s;
+}
+
+.single-character-movie:nth-child(2){
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 2.5s;
+  animation-duration: 1.5s;
+}
+
+.single-character-movie:nth-child(3){
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 3s;
+  animation-duration: 1.5s;
+}
+
+.single-character-movie:nth-child(4){
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 3.5s;
+  animation-duration: 1.5s;
+}
+
+.single-character-movie:nth-child(5){
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  animation-delay: 4s;
+  animation-duration: 1.5s;
+}
+
 @keyframes animate-fade {
   0% {
     opacity: 0;

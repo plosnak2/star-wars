@@ -45,7 +45,7 @@ export const Movies: FC<IProps> = ({films}) => {
             </div>
             {
             movies.map((movie, index) => (
-                <Movie movie={movie} index={index}/>
+                <Movie movie={movie} index={index} showCharacters={true}/>
             ))
             }
         </>

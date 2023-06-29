@@ -1,11 +1,11 @@
 import { FC } from "react";
-import { ICharacter } from "../types/types";
+import { ICharacter, IMovie } from "../types/types";
 import {
     useQueries, useQuery, UseQueryResult
 } from '@tanstack/react-query'
 import { getFilmById, getPlanetById } from "../api/api";
 import Spinner from 'react-bootstrap/Spinner';
-
+import { Movie } from "./movie";
 interface IProps {
     character: ICharacter
 }
@@ -38,6 +38,8 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
         )
     }
 
+    const movies = filmQueries.map(film => {return film.data})
+    
     return(
         <div>
             <div className="container main-layout-character">
@@ -66,6 +68,15 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
                             <p>Diameter: {planet?.diameter}km</p>
                         </div>
                     </div>
+                </div>
+                <div className="character-movies">
+                    {
+                        movies.map((movie, index) => (
+                            <div className="single-character-movie">
+                                <Movie movie={movie as IMovie} index={index} showCharacters={false}/>
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </div>

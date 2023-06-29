@@ -11,10 +11,11 @@ import { useNavigate } from 'react-router-dom';
 
 interface IProps {
     movie: IMovie;
-    index: number
+    index: number;
+    showCharacters: boolean
 }
 
-export const Movie: FC<IProps> = ({movie,index}) => {
+export const Movie: FC<IProps> = ({movie,index, showCharacters}) => {
     const navigate = useNavigate();
     // queries that fetches information about every single character in given movie
     const characterQueries = useQueries({
@@ -40,24 +41,27 @@ export const Movie: FC<IProps> = ({movie,index}) => {
                     <p>{movie.opening_crawl}</p>
                 </div>
             </div>
-            <div className="characters">
-                <Accordion alwaysOpen>
-                    <Accordion.Item eventKey={index.toString()}>
-                        <Accordion.Header className="header">Characters</Accordion.Header>
-                        <Accordion.Body className="accordion-body">
-                            {
-                                characterQueries.some(charLoading) ? 
-                                <Spinner className="spinner-characters" animation="border" />
-                                : characterQueries.map((character: UseQueryResult<any, unknown>, charIndex: number) =>(
-                                    <div className="character-link" key={charIndex} onClick={() => navigate('character/' + character.data.url.split('/')[character.data.url.split('/').length - 2])}>
-                                        {character.data.name}
-                                    </div>
-                                ))
-                            }
-                        </Accordion.Body>
-                    </Accordion.Item>
-                </Accordion>
-            </div>
+            {
+                showCharacters && <div className="characters">
+                    <Accordion alwaysOpen>
+                        <Accordion.Item eventKey={index.toString()}>
+                            <Accordion.Header className="header">Characters</Accordion.Header>
+                            <Accordion.Body className="accordion-body">
+                                {
+                                    characterQueries.some(charLoading) ? 
+                                    <Spinner className="spinner-characters" animation="border" />
+                                    : characterQueries.map((character: UseQueryResult<any, unknown>, charIndex: number) =>(
+                                        <div className="character-link" key={charIndex} onClick={() => navigate('character/' + character.data.url.split('/')[character.data.url.split('/').length - 2])}>
+                                            {character.data.name}
+                                        </div>
+                                    ))
+                                }
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
+                </div>
+            }
+            
         </div>
     )
 }
