@@ -24,3 +24,16 @@ export type ICharacter = {
     starships: string[];
     vehicles: string[];
 }
+
+// type for planet
+export type IPlanet = {
+    climate: string;
+    diamater: string;
+    gravity: string;
+    name: string;
+    orbital_period: string;
+    population: string;
+    terrain: string;
+    rotation_period: string
+}
+
