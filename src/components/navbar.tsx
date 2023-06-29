@@ -9,12 +9,14 @@ function CustomNavbar() {
     <Navbar expand="lg" style={{backgroundColor:"#fddf2b"}}>
       <Container>
         <Navbar.Brand>
-            <img
-              src={require('../images/star-wars.png')}
-              width="120"
-              className="d-inline-block align-top"
-              alt="Star Wars"
-            />
+          <Link to="/">
+              <img
+                src={require('../images/star-wars.png')}
+                width="120"
+                className="d-inline-block align-top"
+                alt="Star Wars"
+              />
+            </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
