@@ -30,6 +30,7 @@ export const Movie: FC<IProps> = ({movie,index, showCharacters}) => {
     const charLoading = (character: UseQueryResult<any, unknown>) => character.isLoading;
 
     // if some of the queryFn is still loading (data are not ready yet) then spinner is shown otherwise characters are displayed
+    // showCharacters flag indicates if this component was called from movies page or character page
     return(
         <div className="movie" key={index}>
             <div className="movie-img-info">

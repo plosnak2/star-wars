@@ -29,7 +29,7 @@ export const getFilmById = async (url: string): Promise<IMovie> => {
     return data;
 }
 
-// api for fetching film by id
+// api for fetching planet by id
 export const getPlanetById = async (url: string): Promise<IPlanet> => {
     const response = await axios.get(url)
     const data = await response.data;
