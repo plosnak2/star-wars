@@ -30,6 +30,7 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
 
     const movieLoading = (movie: UseQueryResult<any, unknown>) => movie.isLoading;
 
+    // waiting for all data to be fetched
     if(isPlanetLoading || filmQueries.some(movieLoading)) {
         return ( 
             <div>
@@ -40,6 +41,8 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
 
     const movies = filmQueries.map(film => {return film.data})
     
+    // TODO similar thing could be done with information about vehicles, species, starships if there was more time 
+
     return(
         <div>
             <div className="container main-layout-character">
