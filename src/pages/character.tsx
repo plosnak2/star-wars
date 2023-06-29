@@ -14,7 +14,7 @@ export const CharacterPage: FC = ({}) => {
     
     // fetching info about character
     const { data: character, isLoading } = useQuery({
-        queryKey: ['character', id],
+        queryKey: ['character', `https://swapi.dev/api/people/${id}`],
         queryFn: () => getCharacterById(id as string)
     })
 

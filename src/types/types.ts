@@ -28,7 +28,7 @@ export type ICharacter = {
 // type for planet
 export type IPlanet = {
     climate: string;
-    diamater: string;
+    diameter: string;
     gravity: string;
     name: string;
     orbital_period: string;

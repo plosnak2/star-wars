@@ -40,8 +40,33 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
 
     return(
         <div>
-            <div className="container main-layout-movies">
-                character info
+            <div className="container main-layout-character">
+                <div className="wrapper">
+                    <div className="character-info">
+                        <img src="https://placehold.co/200x300" width={200} height={300} alt="Star Wars" className="placehold-img"/>
+                        <div className="character-info-about">
+                            <h3>{character.name}</h3>
+                            <p>Gender: {character.gender}</p>
+                            <p>Height: {character.height}cm</p>
+                            <p>Mass: {character.mass}kg</p>
+                            <p>Eye Color: {character.eye_color}</p>
+                            <p>Hair Color: {character.hair_color}</p>
+                            <p>Skin Color: {character.skin_color}</p>
+                        </div>
+                    </div>
+                    <div className="planet-info">
+                        <img src="https://placehold.co/200x300" width={200} height={300} alt="Star Wars" className="placehold-img"/>
+                        <div className="character-info-about">
+                            <h3>Planet: {planet?.name}</h3>
+                            <p>Population: {planet?.population}</p>
+                            <p>Terrain: {planet?.terrain}</p>
+                            <p>Rotation Period: {planet?.rotation_period}h</p>
+                            <p>Climate: {planet?.climate}</p>
+                            <p>Gravity: {planet?.gravity}</p>
+                            <p>Diameter: {planet?.diameter}km</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

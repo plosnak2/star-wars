@@ -25,6 +25,10 @@ a:hover {
   margin-bottom: 50px;
 }
 
+.main-layout-character {
+  margin-top: 50px;
+}
+
 .spinner {
   margin: auto;
   display: block;
@@ -117,6 +121,48 @@ a:hover {
   display: table;
 }
 
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.character-info, .planet-info {
+  width: 45%;
+  background-color: #fddf2b;
+  padding: 20px;
+  border-radius: 10px;
+  animation-name: animate-fade;
+  animation-fill-mode: backwards;
+  display: flex;
+}
+
+.character-info {
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+}
+
+.planet-info {
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+}
+
+.character-info p, .planet-info p {
+  
+  margin-bottom: 5px;
+}
+
+.character-info-about {
+  margin-left: 20px;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @media screen and (max-width: 1200px) {
   .filter {
@@ -138,6 +184,23 @@ a:hover {
     margin-left: 0px;
     margin-top: 20px;
   }
+
+  .placehold-img {
+    max-width: 100%;
+  }
+
+  .character-info {
+    width: 100%;
+  }
+
+  .planet-info {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .wrapper {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -151,3 +214,21 @@ a:hover {
     padding-bottom: 30px;
   }
 }
+
+@media screen and (max-width: 470px) {
+  .character-info, .planet-info {
+    display: block;
+  }
+
+  .character-info img, .planet-info img {
+    display: block;
+    margin: auto;
+  }
+
+  .character-info-about {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
