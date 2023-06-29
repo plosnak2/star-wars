@@ -42,6 +42,7 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
     const movies = filmQueries.map(film => {return film.data})
     
     // TODO similar thing could be done with information about vehicles, species, starships if there was more time 
+    // TODO if there was real images (not just placeholders) there could be done better responsive design
 
     return(
         <div>
