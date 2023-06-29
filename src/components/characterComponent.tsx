@@ -43,6 +43,7 @@ export const CharacterComponent: FC<IProps> = ({character}) => {
     
     // TODO similar thing could be done with information about vehicles, species, starships if there was more time 
     // TODO if there was real images (not just placeholders) there could be done better responsive design
+    // TODO -> this is just information: SWAPI is kinda slow ... even if i try sending request through insomnia, sometimes the responses takes 20 seconds
 
     return(
         <div>
